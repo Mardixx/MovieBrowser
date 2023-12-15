@@ -1,0 +1,20 @@
+.card {
+    background-color: grey;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    margin: auto;
+    border-radius: 15px;
+}
+.title {
+    position: absolute;
+    font-size: 10px;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+}
+.poster {
+    width: 150px;
+}
