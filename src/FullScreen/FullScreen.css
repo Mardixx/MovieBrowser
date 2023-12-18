@@ -1,0 +1,43 @@
+.smallInfos2 {
+    display: flex;
+    gap: 1rem;
+}
+.genreBtn{
+    font-size: 15px;
+    width: fit-content;
+}
+.genres {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+.releaseDate {
+    width: 50%;
+}
+.smallInfos {
+    display: flex;
+    flex-direction: row;
+}
+.runtime {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    align-items: center;
+    gap: 10px;
+}
+.infosForPage {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.rating {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    align-items: center;
+    gap: 10px;
+}
+.titleFullPage {
+    text-align: center;
+}

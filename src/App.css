@@ -1,10 +1,27 @@
-body {
-  text-align: center;
-  width: 20vw;
-  overflow-x: hidden;
-}
 .discover {
   display: flex;
   flex-direction: row;
-  overflow: scroll;
+  overflow-x: auto;
+  width: 95vw;
+  margin-left: 10px;
+  gap: 1rem;
+}
+h1 {
+  font-size: 30px;
+}
+.title, .titleBanner, .rank {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgb(128, 128, 128, 0.5);
+  padding: 10px;
+  border-radius: 15px;
+}
+.playButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 15px;
+}
+.logoLong {
+  margin: 3rem;
 }

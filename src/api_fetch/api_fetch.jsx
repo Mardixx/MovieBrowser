@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import { Trending } from "../Trending/Trending";
+import { useLocation } from "react-router-dom";
+import { FullScreen } from "../FullScreen/FullScreen";
+import { Similar } from "../Similar/Similar";
+import { Genre } from "../Genre/Genre";
 
 const API_KEY = import.meta.env.VITE_APP_KEY;
 const BEARER_TOKEN = import.meta.env.VITE_BEARER_TOKEN;
@@ -28,8 +32,6 @@ export const FetchTrending = () => {
   useEffect (() => {
     fetchConst();
   }, []) 
-  
-  console.log(movieList[randomIndex]);
 
   return (
     <div className="trending">
@@ -65,11 +67,124 @@ export const FetchDiscover = () => {
   }, []) 
 
   return (
-    <div className="discover">
-      {movieList.map((movie, index) => (
-        <Trending key={index} moviesInfo={movie}/>
-      ))}
+    <>
+      <h1>Discover: </h1>
+      <div className="discover">
+        {movieList.map((movie) => (
+            <Trending key={movie.id} moviesInfo={movie}/>
+        ))}
+      </div>
+    </>
+  )
+  
+}
+export const FetchMovie = () => {
+  const [movieList, setMovieList] = useState([]);
+  const [genreArray, setGenreArray] = useState([]);
+
+  const location = useLocation();
+   const id = location.state.from;
+
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${BEARER_TOKEN}`
+    }
+  };
+
+  const fetchConst = () => {
+    
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`, options)
+    .then(response => response.json())
+    .then(data => setMovieList(data))
+    .catch(error => console.error(error));
+  }
+  const fetchGenre = () => {
+    
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`, options)
+    .then(response => response.json())
+    .then(genre => setGenreArray(genre.genres))
+    .catch(error => console.error(error));
+  }
+
+  
+  useEffect (() => {
+    fetchConst();
+    fetchGenre();
+  }, []) 
+
+  
+  return (
+    <div className="fullPage">
+        <FullScreen movie = {movieList}  genreSend = { genreArray } />
     </div>
+  )
+  
+}
+export const FetchSimilar = () => {
+  const [movieList, setMovieList] = useState([]);
+
+  const location = useLocation();
+   const id = location.state.from;
+
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${BEARER_TOKEN}`
+    }
+  };
+
+  const fetchConst = () => {
+    
+    fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}`, options)
+    .then(response => response.json())
+    .then(data => setMovieList(data.results.slice(0, 5)))
+    .catch(error => console.error(error));
+  }
+  
+  useEffect (() => {
+    fetchConst();
+  }, []) 
+
+  return (
+      <div className="similar">
+        {movieList.map(movie => (
+          <Similar key = { movie.id } movieSimilar = { movie } />
+        ))}
+      </div>
+  )
+  
+}
+export const FetchGenreSame = () => {
+  const [movieGenreList, setMovieGenreList] = useState([]);
+
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${BEARER_TOKEN}`
+    }
+  };
+
+  const fetchConstGenre = () => {
+    
+    fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`, options)
+    .then(response => response.json())
+    .then(data => setMovieGenreList(data.genres))
+    .catch(error => console.error(error));
+  }
+  
+  useEffect (() => {
+    fetchConstGenre();
+  }, []) 
+
+  return (
+      <div className="genreSame">
+          <Genre movieGenreSame = { movieGenreList } />
+          
+      </div>
   )
   
 }

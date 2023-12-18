@@ -1,12 +1,8 @@
 .card {
-    background-color: grey;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 5%;
+    width: 100%;
+    height: fit-content;
     margin: auto;
-    border-radius: 15px;
 }
 .title {
     position: absolute;
@@ -15,6 +11,14 @@
     bottom: 0;
     left: 0;
 }
+.rank {
+    position: absolute;
+    font-size: 10px;
+    z-index: 99;
+    top: 0;
+    right: 1rem;
+}
 .poster {
-    width: 150px;
+    width: 250px;
+    border-radius: 5px;
 }

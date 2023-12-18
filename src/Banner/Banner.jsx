@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import "./Banner.css";
 
 const Banner = ({ moviesInfo }) => {
     
         return (
             <div className="banner">
-                <img className="backdrop" src={`https://image.tmdb.org/t/p/w500/${moviesInfo.backdrop_path}`} />
-                <h3 className="title">{moviesInfo.original_title}</h3>
+                <Link to = '/discover' state = {{from: moviesInfo.id}} ><img className="backdrop" src={`https://image.tmdb.org/t/p/w500/${moviesInfo.backdrop_path}`} /></Link>
+                <h3 className="titleBanner"><img className="playButton" src="../public/play-solid.svg" />{moviesInfo.original_title}</h3>
             </div>
         )
 }
