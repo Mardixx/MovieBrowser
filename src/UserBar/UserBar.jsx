@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import './UserBar.css'
-import { useState } from 'react'
 
 export const UserBar = () => {
     return (

@@ -7,7 +7,7 @@ import { User } from './User/User'
 export default function App() {
   return (
         <>
-          <Link to ='/'> <img className='logoLong' src='./public/tmdbLogoLong.svg'/></Link>
+          <Link to ='/'> <img className='logoLong' src='/tmdbLogoLong.svg'/></Link>
           <Routes>
             <Route path='/' element={<><FetchTrending /><FetchDiscover /></>} />
             <Route path='/discover' element={<><FetchMovie /><FetchSimilar /></>} />
