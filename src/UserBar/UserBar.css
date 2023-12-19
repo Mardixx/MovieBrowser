@@ -1,0 +1,14 @@
+body {
+    position: relative;
+    margin-bottom: 3rem;
+}
+footer {
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(81, 76, 76);
+    padding: 1rem;
+    width: 100%;
+}
