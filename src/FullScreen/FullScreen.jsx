@@ -12,8 +12,8 @@ export const FullScreen = (Infos) => {
             <img className="backdropFullPage" src={`https://image.tmdb.org/t/p/w500/${ infos.backdrop_path }`} width="100%" />
             <h1 className="titleFullPage">{ infos.original_title}</h1>
             <div className="smallInfos">
-                <span className="runtime"><img src="./public/clock-regular.svg"/>{ infos.runtime } minutes</span>
-                <span className='rating'><img src="./public/star-solid.svg"/>{ infos.vote_average }</span>
+                <span className="runtime"><img src="/clock-regular.svg"/>{ infos.runtime } minutes</span>
+                <span className='rating'><img src="/star-solid.svg"/>{ infos.vote_average }</span>
             </div>
             <div className="smallInfos2">
             <span className="releaseDate">Release Date: <br />{ infos.release_date}</span>

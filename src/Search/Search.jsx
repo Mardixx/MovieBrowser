@@ -10,7 +10,7 @@ export const Search = (searching) => {
     
     return (
         <div className='searching'>
-            <img src="./public/magnifying-glass-solid.svg"/>
+            <img src="/magnifying-glass-solid.svg"/>
             <input className='inputSearch' type="text" placeholder="Mulan ..." value={input} onChange={(e) => setInput(e.target.value)} />
         </div>
     )

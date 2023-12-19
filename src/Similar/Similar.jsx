@@ -12,7 +12,7 @@ export const Similar = (movieSimilar) => {
     return (
         <div className="card">
             <Link to = '/discover' state = {{from: similar.id}} ><img className="posterSimilar" src={`https://image.tmdb.org/t/p/w500/${similar.poster_path}`} onClick={ reload } /></Link>
-            <h4 className='rank'><img className='starRating' src='../public/star-solid.svg'/>{similar.vote_average}</h4>
+            <h4 className='rank'><img className='starRating' src='/star-solid.svg'/>{similar.vote_average}</h4>
             <h3 className="title">{similar.original_title}</h3>
         </div>
     )
