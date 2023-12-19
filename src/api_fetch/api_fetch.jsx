@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { FullScreen } from "../FullScreen/FullScreen";
 import { Similar } from "../Similar/Similar";
 import { Genre } from "../Genre/Genre";
+import { Search } from "../Search/Search";
 
 const API_KEY = import.meta.env.VITE_APP_KEY;
 const BEARER_TOKEN = import.meta.env.VITE_BEARER_TOKEN;
@@ -184,6 +185,38 @@ export const FetchGenreSame = () => {
       <div className="genreSame">
           <Genre movieGenreSame = { movieGenreList } />
           
+      </div>
+  )
+  
+}
+export const FetchSearch= () => {
+  const [movieSearch, setMovieSearch] = useState([]);
+
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${BEARER_TOKEN}`
+    }
+  };
+
+  const fetchConstSearch = () => {
+    
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`, options)
+    .then(response => response.json())
+    .then(data => setMovieSearch(data.results))
+    .catch(error => console.error(error));
+  }
+  
+  useEffect (() => {
+    fetchConstSearch();
+  }, []) 
+
+  console.log(movieSearch);
+
+  return (
+      <div className="genreSame">
+          <Search movieSearchInfos = { movieSearch } />
       </div>
   )
   

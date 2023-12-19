@@ -1,8 +1,8 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import '../src/App.css'
-import { FetchTrending, FetchDiscover, FetchMovie, FetchSimilar, FetchGenreSame } from "./api_fetch/api_fetch"
+import { FetchTrending, FetchDiscover, FetchMovie, FetchSimilar, FetchGenreSame, FetchSearch } from "./api_fetch/api_fetch"
 import { UserBar } from './UserBar/UserBar'
-import { Search } from './Search/Search'
+import { User } from './User/User'
 
 export default function App() {
   return (
@@ -12,7 +12,8 @@ export default function App() {
             <Route path='/' element={<><FetchTrending /><FetchDiscover /></>} />
             <Route path='/discover' element={<><FetchMovie /><FetchSimilar /></>} />
             <Route path='/genres' element={<FetchGenreSame />} />
-            <Route path='/search' element={<Search />} />
+            <Route path='/search' element={<FetchSearch />} />
+            <Route path='/user' element={<User />} />
           </Routes>
           <footer>
             <UserBar />

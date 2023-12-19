@@ -1,0 +1,13 @@
+.searching {
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 15px;
+}
+.inputSearch {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
