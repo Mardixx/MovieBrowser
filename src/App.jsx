@@ -6,8 +6,8 @@ import { User } from './User/User'
 
 export default function App() {
   return (
-        <>
-          <Link to ='/'> <img className='logoLong' src='/tmdbLogoLong.svg'/></Link>
+        <div className='App'>
+          <Link to ='/'> <img className='logoLong' src='/tmdbLogoLong.svg' alt='Logo TMDB svg' /></Link>
           <Routes>
             <Route path='/' element={<><FetchTrending /><FetchDiscover /></>} />
             <Route path='/discover' element={<><FetchMovie /><FetchSimilar /></>} />
@@ -18,6 +18,6 @@ export default function App() {
           <footer>
             <UserBar />
           </footer>
-        </>
+        </div>
   )
 }

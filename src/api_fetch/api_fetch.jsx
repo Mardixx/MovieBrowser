@@ -34,6 +34,8 @@ export const FetchTrending = () => {
     fetchConst();
   }, []) 
 
+  console.log(movieList);
+
   return (
     <div className="trending">
       {movieList.map((index) => (

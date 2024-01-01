@@ -19,9 +19,22 @@ h1 {
 }
 .playButton {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 15px;
+  width: 7px;
+  padding: 7px;
+  border-radius: 100%;
 }
 .logoLong {
   margin: 3rem;
+}
+@media only screen and (min-width: 768px) {
+  .logoLong{
+    margin: 4rem;
+    width: 35vw;
+  }
+  .playButton {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 1rem;
+    padding: 1rem;
+    border-radius: 50%;
+  }
 }

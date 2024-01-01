@@ -41,3 +41,61 @@
 .titleFullPage {
     text-align: center;
 }
+@media only screen and (min-width: 768px) {
+    p {
+        width: 95%;
+        font-size: 20px;
+        text-align: center;
+    }
+    .backdropFullPage {
+        width: 95%;
+        border-radius: 10px;
+    }
+    .infosForPage {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        gap: 2rem;
+    }
+    .allInfos {
+        display: flex;
+        flex-direction: row;
+        gap: 15rem;
+        height: fit-content;
+        font-size: 20px;
+    }
+    .smallInfos2 {
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+    }
+    .smallInfos {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+    .genres {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+    }
+    .releaseDate {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .runtime {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+    }
+    .rating {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+    }
+}

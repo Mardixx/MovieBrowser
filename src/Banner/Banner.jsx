@@ -5,8 +5,8 @@ const Banner = ({ moviesInfo }) => {
     
         return (
             <div className="banner">
-                <Link to = '/discover' state = {{from: moviesInfo.id}} ><img className="backdrop" src={`https://image.tmdb.org/t/p/w500/${moviesInfo.backdrop_path}`} /></Link>
-                <h3 className="titleBanner"><img className="playButton" src="/play-solid.svg" />{moviesInfo.original_title}</h3>
+                <Link to = '/discover' state = {{from: moviesInfo.id}} ><img className="backdrop" src={`https://image.tmdb.org/t/p/original${moviesInfo.backdrop_path}`} alt="Movie Banner" /></Link>
+                <h3 className="titleBanner"><img className="playButton" src="/play-solid.svg" alt="Play Button svg" />{moviesInfo.original_title}</h3>
             </div>
         )
 }
